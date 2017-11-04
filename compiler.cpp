@@ -156,7 +156,7 @@ std::vector<std::vector<std::vector<Token> > > history;
 
 int strCount = 0;
 
-hashmap Chronicles;
+hashmap st;
 
 string findName(int *type, int *value);
 
@@ -1814,8 +1814,8 @@ void parse2(hashmap *SymbolTable) {
 }
 
 string findName(int * type, int * value){
-	for (hashmap::iterator found = Chronicles.begin();
-			found != Chronicles.end(); ++found) { //	Iterate through different tokens
+	for (hashmap::iterator found = st.begin();
+			found != st.end(); ++found) { //	Iterate through different tokens
 		if (!found->second.empty()) {
 			for (int i = 0; i < found->second.size(); i++) {
 				if(found->second.at(i).getType() == *type && found->second.at(i).getValue() == *value){
@@ -2078,7 +2078,7 @@ int main(int argc, char** argv) {
 	//printST(&SymbolTable);
 
 	//record1(&SymbolTable);
-	Chronicles = SymbolTable;
+	st = SymbolTable;
 	/*
 	cout << "\nHistory:\n";
 	printHistory();
