@@ -2072,7 +2072,6 @@ int main(int argc, char** argv) {
 	cout
 	<< "The print out of the Symbol Table will show ALL rows in the Symbol Table,"
 	<< " including rows that are empty w/ no actual Tokens in the vector:\n\n";
-	// Test your Code! Print out Symbol Table same as example.
 	hashmap SymbolTable;
 	SymbolTable.reserve(200);
 	lexicalAnalyzer(&SymbolTable);
