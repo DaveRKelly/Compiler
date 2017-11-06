@@ -1815,7 +1815,7 @@ void parse2(hashmap *SymbolTable) {
 
 string findName(int * type, int * value){
 	for (hashmap::iterator found = st.begin();
-			found != st.end(); ++found) { //	Iterate through different tokens
+			found != st.end(); ++found) { //Iterate through different tokens
 		if (!found->second.empty()) {
 			for (int i = 0; i < found->second.size(); i++) {
 				if(found->second.at(i).getType() == *type && found->second.at(i).getValue() == *value){
@@ -1944,20 +1944,20 @@ void translate() {
 						cout << ';' << endl;
 					} else if (str.at(0).compare("cin") == 0) {
 						cout << str.at(0) << " >> " << str.at(1) << ';' << endl;
-					} else if (str.at(0).compare("goto") == 0) {// goto label
+					} else if (str.at(0).compare("goto") == 0) {//goto label
 						cout << str.at(0) << " " << str.at(1) << ';' << endl;
 					} else {
 						cout << "str.at(0) = " << str.at(0) << endl;
 						throw 900;
 					}
-				} else if(str.size() == 3) { //	assignment =
+				} else if(str.size() == 3) { //assignment =
 					if (str.at(0).compare("=") == 0) {
 						cout << str.at(2) << " " << str.at(0) << " " << str.at(1) << ';' << endl;
 					} else {
 						throw 901;
 					}
-				} else if(str.size() == 4) { //	arithmatic or RELOP (& or ^)
-					if (str.at(0).compare("+") == 0 || str.at(0).compare("-") == 0 || str.at(0).compare("*") == 0 || str.at(0).compare("/") == 0 || str.at(0).compare("%") == 0) {	//	arithmetic
+				} else if(str.size() == 4) { //arithmatic or RELOP (& or ^)
+					if (str.at(0).compare("+") == 0 || str.at(0).compare("-") == 0 || str.at(0).compare("*") == 0 || str.at(0).compare("/") == 0 || str.at(0).compare("%") == 0) {	//arithmetic
 						cout << str.at(3) << " = " << str.at(1) << " " << str.at(0) << " " << str.at(2) << ';' << endl;
 					}
 					//REL OPs
