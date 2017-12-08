@@ -1,0 +1,6 @@
+#include <iostream>
+
+main() {
+	i = 0;
+	return 0;
+}
